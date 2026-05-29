@@ -20,16 +20,36 @@ class Conta:
         else:
             self.__saldo -= valor
 
-    def  transferir(self, valor, destino):
-       
-    
-        if( self.__saldo< valor) or (valor <0):
-            print("nao e possivel realizar a transferencia")
+    def transferir(self, valor, destino):
+        if(self.__saldo < valor) or (valor < 0):
+            print("Não é possível realizar a tranferência")
         else:
             self.sacar(valor)
             destino.depositar(valor)
 
+    #Métodos apenas para retornar o valor das propriedades
+    def get_saldo(self):
+        return self.__saldo
+    
+    @property
+    def get_titular(self):
+        return self.__titular
+    
+    @property
+    
+    def get_limite(self):
+        return self.__limite
+    
+    @property
+    def get_numero(self):
+        return self.__numero
+    
+
+    #metudos para manipular os valores da  
+    
+    @limite.setter
+    def set_limite(self,limite):
+        self.__limite = limite
 
 
-
-   # def inadimplentes(self,cliente):
+    
